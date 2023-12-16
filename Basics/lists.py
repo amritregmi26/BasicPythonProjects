@@ -30,7 +30,7 @@ items3 = [item for item in items if "e" in item] # adds item to list 3 that has 
 items.reverse()
 
 # sort method is used to sort the list items
-items.reverse()
+items.sort()
 
 #count method is used to check how many times the specified value is repeated in the list
 items.count("Kobe")
