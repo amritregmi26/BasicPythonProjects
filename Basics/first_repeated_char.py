@@ -1,12 +1,16 @@
 class Solution:
     def first_repeated_char(self, s: str) -> str:
         hashmap = {}
-        s = s.lower()
         for c in s:
-            if c in list(hashmap.keys()) and c != " ":
-                hashmap[c] += 1
-            else: 
+            c = c.lower()
+            
+            if c not in hashmap and c.isalnum():
                 hashmap[c] = 1
-            if hashmap[c] == 2:
-                return c     
-        return "No repeating char"
+                
+            elif c in hashmap: 
+                hashmap[c] += 1
+                
+                if hashmap[c] > 1:
+                    return c
+            
+        return "No character is repeated"
